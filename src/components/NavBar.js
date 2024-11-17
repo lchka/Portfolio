@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const MyNavbar = () => {
   return (
-    <Navbar bg="light" expand="lg" className="mx-5 align-items-center">
+    <Navbar bg="light" expand="lg" className="px-5 align-items-center">
       {/* Brand */}
       <Navbar.Brand as={Link} to="/">My Portfolio</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
