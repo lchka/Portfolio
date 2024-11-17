@@ -1,6 +1,7 @@
 import React from 'react'; // Importing React
 import { Container } from 'react-bootstrap'; // Importing Container from react-bootstrap for layout
 import { Link } from 'react-router-dom'; // Importing Link from react-router-dom for navigation
+import TodoList from '../components/TodoList'; // Importing TodoList component
 
 const Home = () => {
     return (
@@ -20,6 +21,8 @@ const Home = () => {
                    CLICK HERE FOR COUNTRIES {/* Link text */}
                 </Link>
             </p>
+            {/* Add the TodoList component here */}
+            <TodoList />
         </Container>
     );
 };
