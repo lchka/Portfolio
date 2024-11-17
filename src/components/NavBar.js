@@ -5,35 +5,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const MyNavbar = () => {
   return (
-    <Navbar className="items-center" bg="light" expand="lg">
-      <Navbar.Brand as={Link} to="/">
-        My Portfolio
-      </Navbar.Brand>
+    <Navbar bg="light" expand="lg" className="mx-5 align-items-center">
+      {/* Brand */}
+      <Navbar.Brand as={Link} to="/">My Portfolio</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto align-items-center">
-          {/* home */}
-          <Nav.Link as={Link} to="/">
-            Home
-          </Nav.Link>
+      
+      {/* Collapsible Content */}
+      <Navbar.Collapse id="basic-navbar-nav" className="d-flex w-100 align-items-center">
+        {/* Centered Nav Links */}
+        <Nav className="mx-auto d-flex align-items-center">
+          <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/about">About</Nav.Link>
+          <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
+          <Nav.Link as={Link} to="/education">Education</Nav.Link>
 
-          {/* about */}
-          <Nav.Link as={Link} to="/about">
-            About
-          </Nav.Link>
-
-          {/* projects */}
-          <Nav.Link as={Link} to="/projects">
-            Projects
-          </Nav.Link>
-
-          {/* contact */}
-          <button>
-            <Nav.Link as={Link} to="/contact">
-              Contact
-            </Nav.Link>
-          </button>
         </Nav>
+
+        {/* Right-Aligned Button */}
+        <button className="btn btn-primary">
+          <Link to="/contact" className="text-white text-decoration-none">
+            Contact
+          </Link>
+        </button>
       </Navbar.Collapse>
     </Navbar>
   );
