@@ -13,7 +13,7 @@ const Home = () => {
         src="https://giphy.com/embed/xT5LMEZCu8g8vZiAgM"
         width="480"
         height="367"
-        frameBorder="0"
+          frameBorder="0"
         allowFullScreen
         title="Giphy GIF"
         className="giphy-embed"
@@ -27,9 +27,9 @@ const Home = () => {
         </Link>
       </p>
       {/* Add a wrapper for positioning the sticky note */}
-      <div className="sticky-note-wrapper">
+      {/* <div className="sticky-note-wrapper">
         <TodoList />
-      </div>
+      </div> */}
     </Container>
   );
 };

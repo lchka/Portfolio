@@ -1,49 +1,46 @@
 .todo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: transparent; // Optional background for contrast
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.sticky-note-card {
+  width: 600px;
+  height: 300px;
+  background: url('../assets/stickynote.webp') no-repeat center / contain;
+  border: none;
+  overflow: hidden;
+
+  .card-header,
+  .card-footer {
+    background: none;
+    border: none;
   }
-  
-  .sticky-note-card {
-    position: relative;
-    width: 400px;
-    background: url('../assets/stickynote.webp') no-repeat center center; // Replace with your image path
-    background-size: contain;
-    border: none; // Hide card border for a seamless sticky note look
-    box-shadow: none; // Optional: Remove shadow for a cleaner design
-    overflow: hidden; // Ensure content stays inside the card
-  
-    .card-header,
-    .card-footer {
-      background: transparent;
-      border: none;
-    }
-  
-    .card-body {
-      padding: 15px;
-      overflow-y: auto; // Scroll if content exceeds the card size
-    }
+
+  .card-body {
+    padding: 20px;
+    overflow-y: auto;
   }
-  
-  input {
-    width: 80%;
-    padding: 5px;
-    margin-right: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-  
-    &:focus {
-      outline: none;
-      border-color: #007bff; // Optional focus color
-    }
+}
+
+input {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+
+  &:focus {
+    border-color: #007bff;
+    outline: none;
   }
-  
-  button {
-    margin-top: 5px;
-    &:hover {
-      background-color: #0056b3; // Optional hover effect
-    }
+}
+
+button {
+  margin-top: 5px;
+
+  &:hover {
+    background-color: #0056b3;
   }
-  
+}
