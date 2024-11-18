@@ -16,7 +16,7 @@ const MyNavbar = () => {
   return (
     <Navbar bg={mode === "light" ? "light" : "dark"} expand="lg" className={`px-5 align-items-center ${mode}`}>
       {/* Brand */}
-      <Navbar.Brand as={Link} to="/">My Portfolio</Navbar.Brand>
+     
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       {/* Collapsible Content */}
@@ -35,7 +35,7 @@ const MyNavbar = () => {
             variant={mode === "light" ? "outline-dark" : "outline-light"}
             onClick={handleToggle}
           >
-            {mode === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+            {mode === "light" ? <span className="blue-moon">🌜 Switch to Dark Mode</span> : "🌞 Switch to Light Mode"}
           </Button>
           <button className={`btn btn-${mode === "light" ? "primary" : "secondary"} ms-3`}>
             <Link to="/contact" className="text-white text-decoration-none">
