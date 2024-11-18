@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import './styles/DisplayMode.scss';
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import About from './pages/About';
