@@ -8,6 +8,7 @@ import About from './pages/About';
 import Education from './pages/Education';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import './styles/index.scss'
 
 const App = () => {
   return (

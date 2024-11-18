@@ -22,14 +22,24 @@ const MyNavbar = () => {
   };
 
   return (
-    <Navbar bg={mode === "light" ? "light" : "dark"} expand="lg" className={`px-5 align-items-center ${mode}`}>
+    <Navbar bg={mode === "light" ? "light" : "dark"} expand="lg" className={` ${mode}`}>
       {/* Brand */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       {/* Collapsible Content */}
-      <Navbar.Collapse id="basic-navbar-nav" className="d-flex w-100 justify-content-between align-items-center">
+      <Navbar.Collapse id="basic-navbar-nav" className="d-flex mx-auto px-4 justify-content-between align-items-center">
+        {/* Left-Aligned Button */}
+        <div>
+          <Button className=""
+            variant={mode === "light" ? "outline-dark" : "outline-light"}
+            onClick={handleToggle}
+          >
+            {mode === "light" ? <span className="blue-moon">🌜 Switch to Dark Mode</span> : "🌞 Switch to Light Mode"}
+          </Button>
+        </div>
+
         {/* Centered Nav Links */}
-        <Nav className={`fs-6 d-flex align-items-center text-${mode === "light" ? "dark" : "light"}`}>
+        <Nav className="text-center fs-5 me-5 pe-5 ">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           <Nav.Link as={Link} to="/about">About</Nav.Link>
           <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
@@ -37,14 +47,8 @@ const MyNavbar = () => {
         </Nav>
 
         {/* Right-Aligned Button */}
-        <div className="ms-auto">
-          <Button
-            variant={mode === "light" ? "outline-dark" : "outline-light"}
-            onClick={handleToggle}
-          >
-            {mode === "light" ? <span className="blue-moon">🌜 Switch to Dark Mode</span> : "🌞 Switch to Light Mode"}
-          </Button>
-          <button className={`btn btn-${mode === "light" ? "primary" : "secondary"} ms-3`}>
+        <div>
+          <button className={`btn btn-${mode === "light" ? "primary" : "secondary"} `}>
             <Link to="/contact" className="text-white text-decoration-none">
               Contact
             </Link>

@@ -7,12 +7,20 @@ body {
         color: black; // Default h1 color in light mode
     }
 
+    a.link {
+        color: blue; // Default link color in light mode
+    }
+
     &[data-mode='dark'] { // Styles for dark mode
         background-color: #0D0313;
         color: #FF69B4; // Neon pink for non-h1 elements
 
         h1 {
             color: #FFFF33; // Neon yellow for h1 in dark mode
+        }
+
+        p.link {
+            color: #ff0000; // Neon blue for links in dark mode
         }
     }
 }
