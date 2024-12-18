@@ -30,16 +30,17 @@ const MyNavbar = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="d-flex mx-auto px-4 justify-content-between align-items-center">
         {/* Left-Aligned Button */}
         <div>
-          <Button className="fw-semibold"
+          <Button
+            className="fw-semibold"
             variant={mode === "light" ? "outline-dark" : "outline-light"}
             onClick={handleToggle}
           >
-            {mode === "light" ? <span className="blue-moon fw-semibold">🌜Dark Mode</span> : "🌞Light Mode"}
+            {mode === "light" ? <span className="blue-moon fw-semibold">🌜 Dark Mode</span> : "🌞 Light Mode"}
           </Button>
         </div>
 
         {/* Centered Nav Links */}
-        <Nav className="text-center fs-5 pe-5 ">
+        <Nav className="text-center fs-5 pe-5">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           <Nav.Link as={Link} to="/about">About</Nav.Link>
           <Nav.Link as={Link} to="/projects">Projects</Nav.Link>

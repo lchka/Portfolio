@@ -1,46 +1,79 @@
 .todo-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-start; /* Align items to the top */
+  height: 100vh; /* Full height of the viewport */
+  padding-left: 20px; /* Keep some space from the edge */
   background-color: transparent;
 }
 
 .sticky-note-card {
-  width: 600px;
-  height: 300px;
-  background: url('../assets/stickynote.webp') no-repeat center / contain;
+  position: relative;
+  width: 500px; /* Set width of sticky note to match image size */
+  height: 400px; /* Set height of sticky note to match image size */
+  background: url('../assets/sticky0te.png') no-repeat center / contain; /* Set image as background */
+  transform: rotate(-7deg);
   border: none;
-  overflow: hidden;
+  overflow: hidden; /* Prevents overflow of content */
+  padding: 65px 85px;
+  box-sizing: border-box; /* Ensures padding is part of the size */
+}
 
-  .card-header,
-  .card-footer {
-    background: none;
-    border: none;
-  }
+.card-header,
+.card-footer {
+  background: none;
+  border: none;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
-  .card-body {
-    padding: 20px;
-    overflow-y: auto;
-  }
+.list-group-item {
+  background-color: transparent !important;
+  border: none !important;
+  text-align: left;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 20px; /* Position it towards the bottom */
+  left: 30px; /* Adjust as needed */
+  width: calc(100% - 60px); /* Adjust footer width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  align-items: center; /* Ensure input and button are aligned */
+  gap: 10px; /* Space between input and button */
+  position: absolute; /* Absolute positioning inside the sticky note */
+  bottom: 20px; /* Position it at the bottom of the sticky note */
+  left: 15px; /* Adjust to ensure it's within the sticky note */
+  width: calc(100% - 30px); /* Full width minus the left and right padding */
+  justify-content: space-between; /* Space out the input and button */
 }
 
 input {
-  width: 80%;
-  padding: 5px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-
+  width: 75%; /* Adjust width as needed */
+  padding: 10px;
+  border: none;
+  background: transparent; /* Transparent background */
+  color: inherit; /* Inherit text color */
+  height: 40px; /* Ensure input height matches button */
+  
   &:focus {
-    border-color: #007bff;
+    border: none;
     outline: none;
   }
 }
 
 button {
-  margin-top: 5px;
-
-  &:hover {
-    background-color: #0056b3;
-  }
+  height: 40px; /* Same height as input box */
+  padding: 0 10px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

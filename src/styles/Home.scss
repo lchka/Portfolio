@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&family=Montserrat+Subrayada:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat+Subrayada:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    font-family: "Geist Mono", monospace;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+span {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.extra {
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 116px;
+    font-family: "Geist Mono", monospace;
+}
+
+h3 {
+    font-size: 88px;
+    ;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+//colour swapping for name
+@keyframes colorSwap {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: blue;
+    }
+
+    50% {
+        color: rgb(255, 208, 1);
+    }
+
+    75% {
+        color: rgb(212, 0, 255);
+    }
+
+    100% {
+        color: rgb(255, 115, 0);
+    }
+}
+
+.color-swap {
+    animation: colorSwap 1.5s infinite;
+    font-family: "Geist Mono", monospace;
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.2rem;
+    padding-top: 95px;
+    overflow: hidden;
+}
+
+.content-container {
+    width: 90%;
+    /* Adjust width as needed */
+    max-width: 2000px;
+    /* Adjust max-width as needed */
+    overflow: hidden;
+}
+
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.7s ease-out;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(8%);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    visibility: hidden;
+    /* Initially hidden */
+}
+
+.slide-in-right.start {
+    visibility: visible;
+    /* Make visible when animation starts */
+    animation: slideInRight 0.7s ease-out;
+    animation-fill-mode: forwards;
+    /* Ensure the element stays in the final state of the animation */
+}
+
+.custom-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    /* Adjust height as needed */
+    padding-top: 5px;
+    min-height: 20px;
+    /* Ensure minimum height to fit the icon */
+    visibility: hidden;
+    /* Initially hidden */
+}
+
+
+
+/* Flip-in animation */
+@keyframes flipIn {
+    0% {
+        transform: rotateX(-110deg);
+        opacity: 0;
+    }
+
+    70% {
+        transform: rotateX(20deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+.flip-in {
+    animation: flipIn 1s ease-out forwards; /* Ensure the animation stays at its final state */
+}
+
+.learnButton {
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Ensures it takes space without showing */
+    transition: opacity 0.5s ease-in, visibility 0s ease-in; /* Smooth transition for opacity, no delay on visibility */
+}
+
+.learnButton.visible {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Make it appear */
+}
+
+/* Button's flip-in animation when it is visible */
+.learnButton.visible.flip-in {
+    animation: flipIn 1s ease-out forwards;
+}
+
+
+
+
+
+
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-in {
+    visibility: visible;
+    animation: scaleIn 0.8s ease-out forwards;
+    /* Ensure animation stays at its final state */
+}
+
+.delay-1 {
+    animation-delay: 4.3s;
+}
+
+.delay-2 {
+    animation-delay: 6.6s;
+}
+
+.card-blue,
+.card-pink,
+.card-purple {
+    visibility: hidden;
+    /* Default to hidden */
+}
+
+
+
+
+
+.card-blue.scale-in,
+.card-pink.scale-in,
+.card-purple.scale-in {
+    visibility: visible;
+    /* Make visible when animation starts */
+}
+
+.card-blue {
+    background-color: #4deeea;
+}
+
+.card-purple {
+    background-color: #00ffa5;
+}
+
+.card-pink {
+    background-color: #f000ff;
+}
+
+.popUpCards h3 {
+    margin-top: 50px;
+}
+
+
+
+.toggle-light-mode {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    font-family: 'Geist Mono', monospace;
+}
+
+.warning-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-family: 'Geist Mono', monospace;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border: 2px solid white;
+    border-radius: 5px;
+}

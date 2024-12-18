@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import TodoItem from "./TodoItem";
 import "../styles/TodoList.scss";
 
-
 const TodoList = () => {
   const initialValue = [
     { text: "Get milk", done: false, id: 1 },
@@ -33,10 +32,15 @@ const TodoList = () => {
   };
 
   const addTodo = () => {
-    const newTodo = { text: inputValue, done: false, id: list.length + 1 };
-    setList([...list, newTodo]);
-    setInputValue(""); // Clear input field after adding
+    if (list.length < 3) {
+      const newTodo = { text: inputValue, done: false, id: list.length + 1 };
+      setList([...list, newTodo]);
+      setInputValue(""); // Clear input field after adding
+    } else {
+      alert("You can only add up to 3 items.");
+    }
   };
+  
 
   const deleteTodo = (id) => {
     const newList = list.filter((item) => item.id !== id);
@@ -63,20 +67,29 @@ const TodoList = () => {
   return (
     <div className="todo-container">
       <Card className="sticky-note-card">
-        <Card.Header>Todo List</Card.Header>
+        <Card.Header className="rotate-text">Todo List</Card.Header>
         <Card.Body>
           <ListGroup variant="flush">{todoItems}</ListGroup>
         </Card.Body>
         <Card.Footer>
-          <input
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onKeyUp={handleKeyUp}
-            placeholder="Add a new task..."
-          />
-          <Button onClick={addTodo} variant="primary" className="float-end">
-            Add
-          </Button>
+          <div className="input-container rotate-text">
+            {/* Input Box */}
+            <input
+              className="border-none fs-6 input-box"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyUp={handleKeyUp}
+              placeholder="Add a new task..."
+            />
+            {/* Add Button - Disabled if input is empty */}
+            <Button
+              onClick={addTodo}
+             
+              disabled={!inputValue.trim()} // Disable button if input is empty
+            >
+              Add
+            </Button>
+          </div>
         </Card.Footer>
       </Card>
     </div>
