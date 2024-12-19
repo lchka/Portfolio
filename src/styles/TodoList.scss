@@ -2,21 +2,18 @@
   display: flex;
   justify-content: flex-start; /* Align content to the left */
   align-items: flex-start; /* Align items to the top */
-  height: 100vh; /* Full height of the viewport */
-  padding-left: 20px; /* Keep some space from the edge */
   background-color: transparent;
 }
 
 .sticky-note-card {
   position: relative;
-  width: 500px; /* Set width of sticky note to match image size */
-  height: 400px; /* Set height of sticky note to match image size */
-  background: url('../assets/sticky0te.png') no-repeat center / contain; /* Set image as background */
-  transform: rotate(-7deg);
-  border: none;
-  overflow: hidden; /* Prevents overflow of content */
-  padding: 65px 85px;
+  width: 500px; /* Set width of sticky note */
+  height: 400px; /* Set height of sticky note */
+  background-color: #fff; /* Set background color */
+  border: 1px solid #ccc; /* Optional border */
+  border-radius: 10px; /* Optional rounded corners */
   box-sizing: border-box; /* Ensures padding is part of the size */
+  overflow: hidden; /* Prevents overflow of content */
 }
 
 .card-header,
@@ -69,7 +66,7 @@ input {
   }
 }
 
-button {
+.todo-container button {
   height: 40px; /* Same height as input box */
   padding: 0 10px;
   color: inherit;

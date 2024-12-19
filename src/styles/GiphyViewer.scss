@@ -1,0 +1,149 @@
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-80%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.9s ease-out;
+}
+
+.projects.card-img-top {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Limit the height */
+  object-fit: cover; /* Ensure the image fits within the container */
+}
+
+.projects.card {
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border: none; /* Remove card border for cleaner look */
+}
+
+.projects.card:hover {
+  box-shadow: 0 0 15px rgba(234, 0, 255, 0.5), 0 0 25px rgba(234, 0, 255, 0.3), 0 0 35px rgba(234, 0, 255, 0.2);
+  transform: scale(1.05); /* Slightly scale the card on hover */
+}
+
+.projects.card-body {
+  padding: 1.5rem;
+  background: #222; /* Slight background for body */
+}
+
+.projects.card-title {
+  color: #ff5f00; /* Neon orange for the title */
+  font-size: 1.2rem;
+}
+.neon-card .neon-img {
+  width: 100%; /* Ensure the image takes up the full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 300px; /* Limit the height to 300px (adjust as needed) */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+
+.neon-link {
+  text-decoration: none;
+  color: #0f0; /* Neon green for links */
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ff00ff; /* Neon magenta on hover */
+  }
+}
+
+
+.neon-header {
+  color: #ff5f00; /* Neon orange header */
+  font-size: 1.5rem;
+}
+
+.neon-btn {
+  background: #222;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.neon-btn:hover {
+  background: #0f0;
+  color: #111;
+}
+
+.neon-dropdown .neon-menu {
+  background: #222;
+  color: #fff;
+}
+
+.neon-dropdown .neon-item {
+  color: #fff;
+  background: #222;
+}
+
+.neon-dropdown .neon-item:hover {
+  background: #0f0;
+  color: #111;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+}
+
+.neon-container {
+  color: #fff;
+}
+
+.neon-card {
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.neon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(234, 0, 255, 0.5);
+}
+
+.neon-title {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.neon-link {
+  color: #ff00ff;
+  text-decoration: none;
+}
+
+.neon-link:hover {
+  text-decoration: underline;
+}
+.neon-blue {
+  color: white;
+  background-color: #00bfff; /* Neon blue base color */
+  border: none;
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+  transition: all 0.3s ease-in-out;
+}
+
+.neon-blue:hover {
+  color: #00bfff; /* Inverted color for text */
+  background-color: white; /* Inverted background */
+  box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 45px #00bfff;
+  transform: scale(1.1); /* Slight hover effect */
+}
+

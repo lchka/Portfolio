@@ -35,3 +35,15 @@
     max-height: 200px; /* Set a maximum height */
     object-fit: cover; /* Ensure the image covers the area */
   }
+  .neon-purple {
+    color: white;
+    background-color: #00bfff; /* Neon blue base color */
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .neon-purple:hover {
+    color: #ffffff; /* Inverted color for text */
+    background-color: #00bfff; /* Neon blue base color */
+    box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 45px #00bfff;
+    transform: scale(1.1); /* Slight hover effect */
+  }
