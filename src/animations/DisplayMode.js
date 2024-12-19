@@ -9,16 +9,19 @@ const toggleDisplayMode = (mode) => {
 const showAlert = () => {
     const alertDiv = document.createElement('div');
     alertDiv.className = 'warning-message';
-    alertDiv.textContent = 'THIS MODE IS UNDER CONSTRUCTION - GO BACK!!!!!!!!!!!!!!!!!!!!!!!!!';
+    alertDiv.textContent = 'THIS IS UNDER CONSTRUCTION --- GO BACK TO THE DARK SIDE';
     document.body.appendChild(alertDiv);
 
-    // Add blur effect to the home page content
-    document.querySelector('.home-container').classList.add('blurred');
+    const homeContainer = document.querySelector('.home-container');
+    if (homeContainer) {
+        homeContainer.classList.add('blurred');
+    }
 
     setTimeout(() => {
         document.body.removeChild(alertDiv);
-        // Remove blur effect from the home page content
-        document.querySelector('.home-container').classList.remove('blurred');
+        if (homeContainer) {
+            homeContainer.classList.remove('blurred');
+        }
     }, 3000); // Hide the warning after 3 seconds
 };
 

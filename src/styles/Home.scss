@@ -255,7 +255,6 @@ p {
 }
 
 
-
 .toggle-light-mode {
     margin-top: 20px;
     padding: 10px 20px;
@@ -280,3 +279,106 @@ p {
     border: 2px solid white;
     border-radius: 5px;
 }
+
+.projects-section {
+    text-align: center;
+    margin: 50px 0;
+    color: white;
+  }
+  
+  .projects-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .projects-section h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+  }
+  
+  .project-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 208, 1, 0.8), 0 0 20px rgba(255, 208, 1, 0.8);
+  }
+  
+  .project-btn:hover {
+    background-color: rgb(255, 208, 1);
+    color: #222;
+    text-shadow: 0 0 10px rgb(255, 208, 1), 0 0 20px rgb(255, 208, 1);
+  }
+
+  /* Style for the typewriter effect */
+  @keyframes typewriter {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 60%; /* Faster reach at 50% */
+    }
+    100% {
+      width: 100%; /* Slow down to complete the text */
+    }
+  }
+  
+  .typewriter {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fbff00; /* Creates the blinking cursor */
+    animation: typewriter 2.7s steps(41) 0.5s 1 normal both;
+  }
+  
+  .neon-pink {
+    color: white;
+    background-color: #ff0080; /* Neon pink base color */
+    border: none;
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .neon-pink:hover {
+    color: #ff0080; /* Inverted color for text */
+    background-color: white; /* Inverted background */
+    box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080, 0 0 45px #ff0080;
+    transform: scale(1.1); /* Slight hover effect */
+  }
+  
+  .neon-blue {
+    color: white;
+    background-color: #00bfff; /* Neon blue base color */
+    border: none;
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .neon-blue:hover {
+    color: #00bfff; /* Inverted color for text */
+    background-color: white; /* Inverted background */
+    box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 45px #00bfff;
+    transform: scale(1.1); /* Slight hover effect */
+  }
+
+
+
+  //project section
+  .projects-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .projects-section.visible {
+    opacity: 1;
+  }
+  

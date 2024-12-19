@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import toggleDisplayMode from "../animations/DisplayMode";
+import "../styles/NavBar.scss"; // Import custom styles for the Navbar
 
 const MyNavbar = () => {
   // Initialize the mode state from localStorage or default to 'light'
@@ -22,7 +23,7 @@ const MyNavbar = () => {
   };
 
   return (
-    <Navbar bg={mode === "light" ? "light" : "dark"} expand="lg" className={` ${mode}`}>
+    <Navbar bg={mode === "light" ? "light" : "dark"} expand="lg" className={`navbar ${mode}`}>
       {/* Brand */}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -31,7 +32,7 @@ const MyNavbar = () => {
         {/* Left-Aligned Button */}
         <div>
           <Button
-            className="fw-semibold"
+            className="fw-semibold neon-button"
             variant={mode === "light" ? "outline-dark" : "outline-light"}
             onClick={handleToggle}
           >
@@ -40,16 +41,16 @@ const MyNavbar = () => {
         </div>
 
         {/* Centered Nav Links */}
-        <Nav className="text-center fs-5 pe-5">
-          <Nav.Link as={Link} to="/">Home</Nav.Link>
-          <Nav.Link as={Link} to="/about">About</Nav.Link>
-          <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
-          <Nav.Link as={Link} to="/education">Education</Nav.Link>
+        <Nav className="text-center fs-5 pe-5 neon-nav">
+          <Nav.Link as={Link} to="/" className="neon-link">Home</Nav.Link>
+          <Nav.Link as={Link} to="/about" className="neon-link">About</Nav.Link>
+          <Nav.Link as={Link} to="/projects" className="neon-link">Projects</Nav.Link>
+          <Nav.Link as={Link} to="/education" className="neon-link">Education</Nav.Link>
         </Nav>
 
         {/* Right-Aligned Button */}
         <div>
-          <button className={`btn btn-${mode === "light" ? "primary" : "secondary"} `}>
+          <button className={`btn neon-btn btn-${mode === "light" ? "primary" : "secondary"}`}>
             <Link to="/contact" className="text-white text-decoration-none">
               Contact
             </Link>

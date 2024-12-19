@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-content">
         {/* Social Media Section */}
         <div className="footer-section">
-          <h3 className="footer-heading">Social Media</h3>
+          <h3 className="footer-heading py-2">Social Media</h3>
           <ul className="footer-links">
             <li className="social-item ">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
@@ -24,13 +24,13 @@ const Footer = () => {
               </a>
             </li>
             <li className="social-item">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="www.linkedin.com/in/laura-hofmanova-35268a295" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={30} />
                 <span className="social-text ps-2"> LinkedIn</span>
               </a>
             </li>
             <li className="social-item">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/lchka" target="_blank" rel="noopener noreferrer">
                 <FaGithub size={30} />
                 <span className="social-text ps-2"> GitHub</span>
               </a>
@@ -46,16 +46,16 @@ const Footer = () => {
 
         {/* Contact Me Section */}
         <div className="footer-section">
-          <h3 className="footer-heading">Contact Me</h3>
+          <h3 className="footer-heading py-2">Contact Me</h3>
           <ul className="footer-links">
-            <li><a href="mailto:your-email@example.com">Email Me</a></li>
+            <li><a href="N00222003@iadt.ie">Email Me</a></li>
             <li><Link to="contact-form" smooth={true} duration={500}>Contact Form</Link></li>
           </ul>
         </div>
 
         {/* Other Info Section */}
         <div className="footer-section">
-          <h3 className="footer-heading">Other Info</h3>
+          <h3 className="footer-heading py-2">Other Info</h3>
           <ul className="footer-links">
             <li><a href="/about">About Me</a></li>
             <li><a href="/portfolio">CV Download</a></li>
