@@ -1,0 +1,204 @@
+// Initially hide the h1 element and position it off the screen
+.about h4 {
+  font-size: 48px;;
+}
+.animatedH1 {
+  opacity: 0;
+  transform: rotateX(-90deg);  /* Initially position it off the screen */
+  transform-origin: top;  /* Set the pivot point for the flip to the top */
+  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Bounce effect after the flip */
+@keyframes bounce {
+  0% { transform: rotateX(-90deg); }
+  50% { transform: rotateX(10deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+/* Class for flipping the h1 and adding the bounce effect */
+.fadeInFlipBounce {
+  opacity: 1;
+  animation: bounce 1s ease-in-out forwards;
+}
+/* Class for fading in the h4 elements */
+.animatedH4 {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+/* Scrolling and sliding for h4 */
+.slide-in-left, .slide-in-right {
+  font-size: 48px;
+}
+
+/* Slide in from the left */
+@keyframes slideInLeftOne {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left-one {
+  animation: slideInLeftOne 0.7s ease-out;
+}
+
+/* Slide in from the right */
+@keyframes slideInRightTwo {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right-two {
+  visibility: visible;
+  animation: slideInRightTwo 0.7s ease-out;
+}
+
+/* Optional: Additional fade-in effect */
+.fadeIn {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+
+/* Flip-in animation */
+@keyframes flipIn {
+  0% {
+    transform: rotateX(-110deg);
+    opacity: 0;
+  }
+  70% {
+    transform: rotateX(20deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.flip-in {
+  animation: flipIn 1s ease-out forwards; /* Ensure the animation stays at its final state */
+}
+
+.learnButton {
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Ensures it takes space without showing */
+  transition: opacity 0.5s ease-in, visibility 0s ease-in; /* Smooth transition for opacity, no delay on visibility */
+}
+
+.learnButton.visible {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it appear */
+}
+
+/* Button's flip-in animation when it is visible */
+.learnButton.visible.flip-in {
+  animation: flipIn 1s ease-out forwards;
+}
+// If you want to ensure smooth scrolling back to the top
+.learnButton {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.learnButton.visible {
+  opacity: 1;
+}
+/* Neon white button */
+.neon-white {
+  color: white; /* Neon blue text color */
+  background-color: #00bfff; /* White base color */
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.neon-white:hover {
+  color: white; /* Inverted color for text */
+  background-color: #44d0ff; /* Neon blue background */
+  box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff, 0 0 45px #00bfff;
+  transform: scale(1.1); /* Slight hover effect */
+}
+
+/* Slide in from the left */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.7s ease-in-out;
+}
+
+
+
+/* Slide in from the right  for card*/
+@keyframes slideInRight {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.7s ease-in-out;
+}
+
+/* Initially hide the image */
+.rightSide {
+  opacity: 0;
+  visibility: hidden; /* Ensure it starts hidden */
+  
+  transition: opacity 1s ease-in-out; /* Smooth fade and slide-in */
+}
+
+//image
+/* Image fade-in effect when class 'fadeInImage' is added */
+.fadeInImage {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make sure it's visible */
+  transform: translateX(-180%); /* Move to its normal position */
+}
+
+
+
+/* Smooth card move to the right */
+.move-card-right {
+  transform: translateX(100%);
+  transition: transform 0.8s ease-in-out;
+}
+
+
+
+
+/* Apply the glowing effect to the Card inside leftSide */
+.leftSide .card {
+  background-color: #ffffff;  /* Neon blue background */
+  color: rgb(0, 0, 0); /* White text color */
+  box-shadow: 0 0 15px #ff45a2, 0 0 30px #ff9acc, 0 0 45px #ffb3d9; /* Blue glowing effect */
+}
+
+

@@ -10,8 +10,8 @@ const Home = () => {
   const [isScrollButtonVisible, setIsScrollButtonVisible] = useState(false); // State for scroll button visibility
   const [showLearnButton, setShowLearnButton] = useState(false); // State for Learn More button visibility
   const [isButtonsVisible, setIsButtonsVisible] = useState(false); // Controls the visibility of the buttons
-  // Inside the Home component
-  const location = useLocation();
+// Inside the Home component
+const location = useLocation();
   const [isCardBlueVisible, setIsCardBlueVisible] = useState(false);
   const [isCardPinkVisible, setIsCardPinkVisible] = useState(false);
   const [isCardPurpleVisible, setIsCardPurpleVisible] = useState(false);
@@ -111,7 +111,7 @@ const Home = () => {
       }
     }
   }, [location]);
-
+  
   const handleNavigate = () => {
     navigate("/projects"); // Navigate to the Projects page first
     setTimeout(() => {
@@ -119,7 +119,7 @@ const Home = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 100);
   };
-
+  
   return (
     <div className="home-container">
       <div className="content-container py-1">
@@ -229,24 +229,24 @@ const Home = () => {
             isProjectsVisible ? "visible" : ""
           }`}
         >
-          <h1>Do you want see my projects?</h1>
+          <h1>Wanna see my projects?</h1>
 
           <div
             style={{ marginBottom: "100px" }}
             className="d-flex justify-content-center"
           >
             <button
-              className="btn rounded-4 project-btn neon-pink mx-3"
-              onClick={handleNavigate}
-            >
-              Yeah!
-            </button>
-            <button
-              className="btn project-btn neon-blue rounded-4 mx-3"
-              onClick={handleNavigate}
-            >
-              No
-            </button>
+  className="btn rounded-4 project-btn neon-pink mx-3"
+  onClick={handleNavigate}
+>
+  Yeah!
+</button>
+<button
+  className="btn project-btn neon-blue rounded-4 mx-3"
+  onClick={handleNavigate}
+>
+  Nah
+</button>
           </div>
         </div>
       </div>
