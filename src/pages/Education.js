@@ -1,12 +1,19 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CV from "../assets/CV.pdf";
 import "../styles/Education.scss";
+import "../styles/BackButton.scss"
 const Education = () => {
   return (
     <Container className="mt-5 education">
-      <h1 className="mb-5">Education</h1>
+       <Button
+              className="back-button my-3"
+              onClick={() => window.history.back()}
+            >
+              Go Back
+            </Button>
+   <h1 className="py-1 text-left mb-2 slide-in-left">Education</h1>
       <h4 className="pb-5">
         Hi! I am currently looking for internships for 2025. If you would like
         to check out my CV, I would highly appreciate it! You can view it{" "}

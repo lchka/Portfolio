@@ -5,6 +5,8 @@ import Search from "./Search";
 import ViewTrending from "./ViewTrending";
 import Random from "./Random";
 import "../../styles/GiphyViewer.scss";
+import "../../styles/BackButton.scss";
+
 
 const GIPHY_URL = "https://api.giphy.com/v1/gifs";
 const API_KEY = "zS8ylSqoBUwvEZj2Vs15oVsNQ7eJydkX";
@@ -71,6 +73,12 @@ const GiphyViewer = () => {
 
   return (
     <Container className="neon-container py-5">
+      <Button
+              className="back-button neon-white my-3"
+              onClick={() => window.history.back()}
+            >
+              Go Back
+            </Button>
       <Row className="d-flex justify-content-between align-items-center neon-header mb-4" md={4}>
         <Search setGifs={setGifs} /> {/* Search component */}
         <ViewTrending setGifs={setGifs} /> {/* ViewTrending component */}

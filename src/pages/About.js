@@ -3,6 +3,7 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/About.scss";
 import Me from "../assets/ime.png"; // Image path
+import "../styles/BackButton.scss";
 
 const About = () => {
   const [isVisible1, setIsVisible1] = useState(false);
@@ -11,7 +12,8 @@ const About = () => {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
   const [isCardMoved, setIsCardMoved] = useState(false); // State for card movement
   const [isImageVisible, setIsImageVisible] = useState(false); // State for image fade-in
-  const [hasScrolledToCardSection, setHasScrolledToCardSection] = useState(false); // State for tracking scroll
+  const [hasScrolledToCardSection, setHasScrolledToCardSection] =
+    useState(false); // State for tracking scroll
 
   // Create a ref for the card section
   const cardSectionRef = useRef(null);
@@ -22,21 +24,23 @@ const About = () => {
       // Get the height of the window and the card section
       const windowHeight = window.innerHeight;
       const cardSectionHeight = cardSectionRef.current.offsetHeight;
-  
+
       // Calculate the offset to center the card section in the middle of the window
-      const offset = cardSectionRef.current.getBoundingClientRect().top + window.scrollY - (windowHeight - cardSectionHeight) / 2;
-  
+      const offset =
+        cardSectionRef.current.getBoundingClientRect().top +
+        window.scrollY -
+        (windowHeight - cardSectionHeight) / 2;
+
       // Scroll to the calculated position
       window.scrollTo({
         top: offset,
         behavior: "smooth",
       });
-  
+
       // After scroll, set the state to trigger animations
       setHasScrolledToCardSection(true);
     }
   };
-  
 
   // Use an effect to trigger the card movement and image fade-in after the scroll
   useEffect(() => {
@@ -85,6 +89,13 @@ const About = () => {
 
   return (
     <Container className="mt-5 about">
+      <Button
+        className="back-button my-3"
+        onClick={() => window.history.back()}
+      >
+        Go Back
+      </Button>
+
       <Row>
         <Col md={12} className="about">
           <h1 className={`animatedH1 ${isVisible1 ? "fadeInFlipBounce" : ""}`}>

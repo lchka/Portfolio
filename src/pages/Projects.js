@@ -12,6 +12,7 @@ import Barchart from "../assets/barchart.webp";
 import TodoList from "../components/TodoList"; // Assuming this is a component you want to show as the demo
 import Giphy from "../assets/GIF-Player.gif"
 import Todo from "../assets/todo.jpeg"
+import "../styles/BackButton.scss"
 
 const Projects = () => {
   const [openDemo, setOpenDemo] = useState(null); // State to track which demo is open
@@ -127,7 +128,13 @@ const Projects = () => {
 
   return (
     <Container className="my-5">
-      <h1 className="py-3 mt-4 text-left mb-5 slide-in-left">Projects</h1>
+       <Button
+                    className="back-button  my-3"
+                    onClick={() => window.history.back()}
+                  >
+                    Go Back
+                  </Button>
+      <h1 className="py-1 text-left mb-2 slide-in-left">Projects</h1>
       <h4 className="pt-4 pb-2">Search by any of these Labels!</h4>
       
       {/* Language filter buttons */}

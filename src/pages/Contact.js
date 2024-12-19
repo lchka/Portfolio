@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import "../styles/Home.scss";
+import "../styles/BackButton.scss"
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,6 +26,12 @@ const Contact = () => {
 
   return (
     <Container>
+      <Button
+              className="back-button my-3"
+              onClick={() => window.history.back()}
+            >
+              Go Back
+            </Button>
       <Row className="justify-content-md-center">
         <Col md={6}>
           <h2 className="my-4">Contact Me</h2>

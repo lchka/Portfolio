@@ -25,7 +25,9 @@ const showAlert = () => {
     }, 3000); // Hide the warning after 3 seconds
 };
 
-// Initial setup
-document.body.setAttribute('data-mode', 'light'); // Default to light mode
+// Ensure the default mode is always "dark" when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.setAttribute('data-mode', 'dark'); // Set the initial mode to 'dark'
+});
 
 export default toggleDisplayMode;
