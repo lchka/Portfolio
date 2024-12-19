@@ -3,14 +3,15 @@ import { Button, Card, Row, Col } from "react-bootstrap";
 import { FaChevronDown } from "react-icons/fa";
 import { Link as ScrollLink, Element } from "react-scroll";
 import "../styles/Home.scss";
-import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
+import { useNavigate, useLocation } from "react-router-dom"; // Import the useNavigate hook
 
 const Home = () => {
   const [isNameVisible, setIsNameVisible] = useState(false); // State for H1 visibility
   const [isScrollButtonVisible, setIsScrollButtonVisible] = useState(false); // State for scroll button visibility
   const [showLearnButton, setShowLearnButton] = useState(false); // State for Learn More button visibility
   const [isButtonsVisible, setIsButtonsVisible] = useState(false); // Controls the visibility of the buttons
-
+// Inside the Home component
+const location = useLocation();
   const [isCardBlueVisible, setIsCardBlueVisible] = useState(false);
   const [isCardPinkVisible, setIsCardPinkVisible] = useState(false);
   const [isCardPurpleVisible, setIsCardPurpleVisible] = useState(false);
@@ -46,8 +47,8 @@ const Home = () => {
         if (rect.top <= window.innerHeight) {
           // Sequentially set each card visible with delays
           setTimeout(() => setIsCardBlueVisible(true), 600);
-          setTimeout(() => setIsCardPinkVisible(true), 1500);
-          setTimeout(() => setIsCardPurpleVisible(true), 2500);
+          setTimeout(() => setIsCardPinkVisible(true), 2000);
+          setTimeout(() => setIsCardPurpleVisible(true), 3000);
 
           // After the last card animation is complete, scroll to the middle section, but only if not already done
           if (!hasScrolledToMiddle) {
@@ -63,7 +64,7 @@ const Home = () => {
                 });
                 setHasScrolledToMiddle(true); // Mark that scrolling to the middle section has occurred
               }
-            }, 3000); // Adjust this timing to match when the animation finishes
+            }, 5000); // Adjust this timing to match when the animation finishes
           }
         }
       }
@@ -101,6 +102,24 @@ const Home = () => {
       return () => clearTimeout(timer);
     }
   }, [hasScrolledToMiddle, hasScrolledToProjects]);
+
+  useEffect(() => {
+    if (location.pathname === "/projects" && location.hash === "#projects") {
+      const section = document.getElementById("projects");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+  
+  const handleNavigate = () => {
+    navigate("/projects"); // Navigate to the Projects page first
+    setTimeout(() => {
+      // Ensure the page loads first, then scroll to the top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
+  };
+  
   return (
     <div className="home-container">
       <div className="content-container py-1">
@@ -217,21 +236,17 @@ const Home = () => {
             className="d-flex justify-content-center"
           >
             <button
-              className={`btn  rounded-4 project-btn neon-pink mx-3 ${
-                isButtonsVisible ? "visible" : ""
-              }`}
-              onClick={() => navigate("/projects")}
-            >
-              Yeah!
-            </button>
-            <button
-              className={`btn project-btn neon-blue rounded-4 mx-3 ${
-                isButtonsVisible ? "visible" : ""
-              }`}
-              onClick={() => navigate("/projects")}
-            >
-              Nah
-            </button>
+  className="btn rounded-4 project-btn neon-pink mx-3"
+  onClick={handleNavigate}
+>
+  Yeah!
+</button>
+<button
+  className="btn project-btn neon-blue rounded-4 mx-3"
+  onClick={handleNavigate}
+>
+  Nah
+</button>
           </div>
         </div>
       </div>
