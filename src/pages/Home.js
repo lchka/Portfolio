@@ -75,41 +75,32 @@ const Home = () => {
     };
   }, [hasScrolledToMiddle]); // Dependency on hasScrolledToMiddle state
 
+  useEffect(() => {
+    if (hasScrolledToProjects) {
+      const fadeTimer = setTimeout(() => {
+        setIsProjectsVisible(true); // Trigger the fade-in effect after scroll
+      }, 500); // Adjust the delay based on how long you want to wait before fading in
 
- useEffect(() => {
-  if (hasScrolledToProjects) {
-    const fadeTimer = setTimeout(() => {
-      setIsProjectsVisible(true); // Trigger the fade-in effect after scroll
-    }, 500); // Adjust the delay based on how long you want to wait before fading in
+      return () => clearTimeout(fadeTimer);
+    }
+  }, [hasScrolledToProjects]);
 
-    return () => clearTimeout(fadeTimer);
-  }
-}, [hasScrolledToProjects]);
+  useEffect(() => {
+    if (hasScrolledToMiddle && !hasScrolledToProjects) {
+      const timer = setTimeout(() => {
+        const projectsSection = document.querySelector(".projects-section");
+        if (projectsSection) {
+          window.scrollTo({
+            top: projectsSection.offsetTop,
+            behavior: "smooth",
+          });
+          setHasScrolledToProjects(true);
+        }
+      }, 3000); // Adjust this timing to match when the animation finishes
 
-useEffect(() => {
-  // Check if the typewriter animation has finished, and scroll to the "projects-section"
-  if (hasScrolledToMiddle && !hasScrolledToProjects) {
-    const timer = setTimeout(() => {
-      const projectsSection = document.querySelector(".projects-section");
-      if (projectsSection) {
-        const projectsOffset =
-          projectsSection.offsetTop -
-          (window.innerHeight - projectsSection.offsetHeight) / 2;
-        
-        // Add an offset to scroll a little further down
-        const scrollOffset = 130; // Adjust this value as needed
-        window.scrollTo({
-          top: projectsOffset + scrollOffset, // Add scrollOffset to move a little further down
-          behavior: "smooth",
-        });
-        setHasScrolledToProjects(true); // Mark that scrolling to the projects section has occurred
-      }
-    }, 3000); // Wait for the typewriter animation (or adjust the timing as needed)
-
-    return () => clearTimeout(timer);
-  }
-}, [hasScrolledToMiddle, hasScrolledToProjects]);
-
+      return () => clearTimeout(timer);
+    }
+  }, [hasScrolledToMiddle, hasScrolledToProjects]);
   return (
     <div className="home-container">
       <div className="content-container py-1">
@@ -162,8 +153,8 @@ useEffect(() => {
                 <Card.Body>
                   <Card.Title>I am...</Card.Title>
                   <Card.Text className="fs-1 extra">
-                    a <span className="color-swap">23 Year Old</span>, Creative Coding Student. Living in
-                    Westmeath, Ireland!
+                    a <span className="color-swap">23 Year Old</span>, Creative
+                    Coding Student. Living in Westmeath, Ireland!
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -177,8 +168,8 @@ useEffect(() => {
                 <Card.Body>
                   <Card.Title>I am...</Card.Title>
                   <Card.Text className="fs-1 extra">
-                    originally from <span className="color-swap">Slovakia</span>. Making me fluent in four different
-                    languages!
+                    originally from <span className="color-swap">Slovakia</span>
+                    . Making me fluent in four different languages!
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -192,9 +183,9 @@ useEffect(() => {
                 <Card.Body>
                   <Card.Title>I am...</Card.Title>
                   <Card.Text className="fs-1 extra">
-                    currently looking for{" "}
-                    <span className="color-swap">internships</span>. With
-                    experience in many coding languages!
+                    currently{" "}
+                    <span className="color-swap">looking for internships</span>.
+                    With experience in many coding languages!
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -214,16 +205,19 @@ useEffect(() => {
         </div>
 
         {/* Last Section */}
-        <div 
+        <div
           className={`projects-section my-5 ${
             isProjectsVisible ? "visible" : ""
           }`}
         >
           <h1>Wanna see my projects?</h1>
 
-          <div style={{marginBottom:"100px"}} className="d-flex justify-content-center">
+          <div
+            style={{ marginBottom: "100px" }}
+            className="d-flex justify-content-center"
+          >
             <button
-              className={`btn project-btn neon-pink mx-3 ${
+              className={`btn  rounded-4 project-btn neon-pink mx-3 ${
                 isButtonsVisible ? "visible" : ""
               }`}
               onClick={() => navigate("/projects")}
@@ -231,7 +225,7 @@ useEffect(() => {
               Yeah!
             </button>
             <button
-              className={`btn project-btn neon-blue mx-3 ${
+              className={`btn project-btn neon-blue rounded-4 mx-3 ${
                 isButtonsVisible ? "visible" : ""
               }`}
               onClick={() => navigate("/projects")}
