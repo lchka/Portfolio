@@ -79,8 +79,8 @@ const Projects = () => {
 
   return (
     <Container className="my-5">
-      <h1 id="projects" className="py-3 mt-4 text-left mb-5 slide-in-left">Projects</h1>
-      <Row id="projects">
+      <h1 className="py-3 mt-4 text-left mb-5 slide-in-left">Projects</h1>
+      <Row>
         {projects.map((project) => (
           <Col md={4} key={project.id} className="mb-4">
             <Card
