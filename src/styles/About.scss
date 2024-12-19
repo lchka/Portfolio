@@ -4,6 +4,7 @@
 }
 .animatedH1 {
   opacity: 0;
+  font-size: 116px;
   transform: rotateX(-90deg);  /* Initially position it off the screen */
   transform-origin: top;  /* Set the pivot point for the flip to the top */
   transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
@@ -31,10 +32,6 @@
   opacity: 1;
 }
 
-/* Scrolling and sliding for h4 */
-.slide-in-left, .slide-in-right {
-  font-size: 48px;
-}
 
 /* Slide in from the left */
 @keyframes slideInLeftOne {
@@ -133,39 +130,7 @@
   transform: scale(1.1); /* Slight hover effect */
 }
 
-/* Slide in from the left */
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-30%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
-.slide-in-left {
-  animation: slideInLeft 0.7s ease-in-out;
-}
-
-
-
-/* Slide in from the right  for card*/
-@keyframes slideInRight {
-  0% {
-    transform: translateX(30%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.slide-in-right {
-  animation: slideInRight 0.7s ease-in-out;
-}
 
 /* Initially hide the image */
 .rightSide {

@@ -78,13 +78,13 @@ const Projects = () => {
   };
 
   return (
-    <Container className="my-5">
+    <Container className=" my-5">
       <h1 className="py-3 mt-4 text-left mb-5 slide-in-left">Projects</h1>
       <Row>
         {projects.map((project) => (
           <Col md={4} key={project.id} className="mb-4">
             <Card
-              className="rounded-4 mb-3 clickable-card"
+              className=" projects rounded-4 mb-3 clickable-card"
               onClick={(e) => handleCardClick(e, project.link)} // Pass the event and correct link
             >
               <Card.Img className="p-2 rounded-4" variant="top" src={project.image} alt={project.name} />

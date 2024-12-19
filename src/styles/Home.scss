@@ -375,13 +375,3 @@ p {
 
 
 
-  //project section
-  .projects-section {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  .projects-section.visible {
-    opacity: 1;
-  }
-  

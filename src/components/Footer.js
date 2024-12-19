@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/Footer.scss"; // Make sure the styles are linked
-
+import CV from "../assets/CV.pdf"
 const Footer = () => {
   return (
     <footer className="footer-container">
@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-heading py-2">Contact Me</h3>
           <ul className="footer-links">
-            <li><a href="N00222003@iadt.ie">Email Me</a></li>
+            <li><a href="{CV}">Email Me</a></li>
             <li><Link to="contact-form" smooth={true} duration={500}>Contact Form</Link></li>
           </ul>
         </div>
@@ -58,7 +58,7 @@ const Footer = () => {
           <h3 className="footer-heading py-2">Other Info</h3>
           <ul className="footer-links">
             <li><a href="/about">About Me</a></li>
-            <li><a href="/portfolio">CV Download</a></li>
+            <li><a href={CV}>CV Download</a></li>
           </ul>
         </div>
       </div>

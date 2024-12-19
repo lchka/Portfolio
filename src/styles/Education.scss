@@ -1,0 +1,36 @@
+
+.education.card-img-top {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a maximum height */
+    object-fit: cover; /* Ensure the image covers the area */
+  }
+  .education.card {
+    transition: box-shadow 0.1s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .education.card:hover {
+    box-shadow: 0 0 15px rgba(234, 0, 255, 0.5), 0 0 25px rgba(234, 0, 255, 0.3), 0 0 35px rgba(234, 0, 255, 0.2);
+    transform: scale(1.05); /* Slightly scale the card on hover */
+  }
+  
+  .education.card-img-top {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a maximum height */
+    object-fit: cover; /* Ensure the image covers the area */
+  }
+
+    //project section
+    .projects-section {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      
+      .projects-section.visible {
+        opacity: 1;
+      }
+      
+      .cvLink {
+        color:yellow;
+      }

@@ -84,7 +84,7 @@ const About = () => {
   }, []);
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 about">
       <Row>
         <Col md={12} className="about">
           <h1 className={`animatedH1 ${isVisible1 ? "fadeInFlipBounce" : ""}`}>

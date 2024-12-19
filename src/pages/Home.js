@@ -229,7 +229,7 @@ const location = useLocation();
             isProjectsVisible ? "visible" : ""
           }`}
         >
-          <h1>Wanna see my projects?</h1>
+          <h1>Do you want to see my projects?</h1>
 
           <div
             style={{ marginBottom: "100px" }}
@@ -239,13 +239,13 @@ const location = useLocation();
   className="btn rounded-4 project-btn neon-pink mx-3"
   onClick={handleNavigate}
 >
-  Yeah!
+  Yes!
 </button>
 <button
   className="btn project-btn neon-blue rounded-4 mx-3"
   onClick={handleNavigate}
 >
-  Nah
+  No!
 </button>
           </div>
         </div>
